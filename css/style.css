@@ -1,0 +1,37 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000000;
+    color: #37ff00;
+}
+
+video{
+    width: 50%;
+    box-shadow: 0 0 15px #37ff00;
+    border-radius: 24px;
+}
+
+select{
+    padding: 6px;
+    border-radius: 6px;
+}
+button{
+    border: 1px solid #37ff00;
+    padding: 6px;
+    border-radius: 6px;
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 0 10px #37ff00;
+    transition: .5s;
+}
+button:hover{
+    background-color: #37ff00;
+    color: #000000;
+}
+canvas{
+    box-shadow: 0 0 10px #37ff00;
+    border-radius: 24px;
+}

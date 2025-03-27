@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocalização</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+        <h1>Geolocalização GPS</h1>
+        <br>
+        <button id="botao_geo">Me Localizar</button>
+        <div class="local_geo">
+        
+        </div>
+        <br>
+        <iframe src="" id="mapa" width="1024" height="500px"></iframe>
+
+
+
+
+    <script>
+        const botao = document.getElementById("botao_geo");
+        const local = document.querySelector(".local_geo");
+        const mapa = document.getElementById("mapa");
+        
+        botao.addEventListener("click", () => {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition((position => {
+                    console.log("Clicou no botão");
+                    const {latitude, longitude} = position.coords;
+                    local.textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+                    mapa.src = `https://www.google.com/maps?q=${latitude},${longitude}&output=embed`;
+                }, error => {
+                    alert("Erro ao obter localização!");
+                }
+            ));
+            } else {
+                alert("Geolocalização não disponível!");
+            }
+        })
+    </script>
+</body>
+</html>
